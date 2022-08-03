@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>swiper demo</title>
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"
+    />
+
+    <style>
+      body {
+        margin: 0;
+      }
+      .swiper-hero {
+        width: 100%;
+        max-width: 1600px;
+      }
+
+      .swiper-hero .swiper-slide {
+        width: 250px;
+      }
+
+      .swiper-hero img {
+        height: 255px;
+        width: 100%;
+        object-fit: cover;
+      }
+
+      @media (min-width: 1024px) {
+        .swiper-hero img {
+          height: 344px;
+        }
+      }
+
+      .swiper-hero .swiper-button-prev,
+      .swiper-hero .swiper-button-next {
+        --swiper-navigation-size: 20px;
+        background-color: white;
+        height: 70px;
+        width: 50px;
+        margin-top: -35px;
+
+        opacity: 0;
+        transition: opacity 0.3s;
+      }
+
+      .swiper-hero .swiper-button-prev {
+        border-radius: 0 65px 65px 0;
+        left: -10px;
+      }
+      .swiper-hero .swiper-button-next {
+        border-radius: 65px 0 0 65px;
+        right: -10px;
+      }
+
+      .swiper-hero:hover .swiper-button-prev,
+      .swiper-hero:hover .swiper-button-next {
+        opacity: 1;
+      }
+
+      .swiper-hero .swiper-pagination {
+        --swiper-pagination-color: white;
+        --swiper-pagination-bullet-size: 6px;
+        --swiper-pagination-bullet-inactive-color: #000;
+        --swiper-pagination-bullet-inactive-opacity: 0.25;
+        --swiper-pagination-bullet-opacity: 1;
+        --swiper-pagination-bullet-horizontal-gap: 2px;
+      }
+
+      .swiper-hero .swiper-pagination-bullet {
+        box-shadow: inset 0 0 0 1px #fff;
+      }
+
+      .swiper-hero .swiper-pagination-bullet-active {
+        box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.25);
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Slider main container -->
+    <div class="swiper swiper-hero">
+      <!-- Additional required wrapper -->
+      <div class="swiper-wrapper">
+        <!-- Slides -->
+        <div class="swiper-slide">
+          <img
+            src="https://http2.mlstatic.com/D_NQ_939987-MLA50832730063_072022-OO.webp"
+            alt=""
+          />
+        </div>
+        <div class="swiper-slide">
+          <img
+            src="https://http2.mlstatic.com/D_NQ_817829-MLA50860384312_072022-OO.webp"
+            alt=""
+          />
+        </div>
+        <div class="swiper-slide">
+          <img
+            src="https://http2.mlstatic.com/D_NQ_955859-MLA50696530729_072022-OO.webp"
+            alt=""
+          />
+        </div>
+        <div class="swiper-slide">
+          <img
+            src="https://http2.mlstatic.com/D_NQ_999003-MLA50928299324_072022-OO.webp"
+            alt=""
+          />
+        </div>
+        <div class="swiper-slide">
+          <img
+            src="https://http2.mlstatic.com/D_NQ_954078-MLA50783791927_072022-OO.webp"
+            alt=""
+          />
+        </div>
+      </div>
+      <!-- If we need pagination -->
+      <div class="swiper-pagination"></div>
+
+      <!-- If we need navigation buttons -->
+      <div class="swiper-button-prev"></div>
+      <div class="swiper-button-next"></div>
+
+      <!-- If we need scrollbar -->
+      <!-- <div class="swiper-scrollbar"></div> -->
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+    <script>
+      const swiper = new Swiper(".swiper-hero", {
+        // Optional parameters
+        // slidesPerView: "auto",
+        // spaceBetween: 15,
+        // slidesPerGroupAuto: true,
+
+        direction: "horizontal",
+        loop: true,
+        // allowTouchMove: true,
+        // effect: "cube",
+        autoplay: {
+          delay: 10000,
+          pauseOnMouseEnter: true,
+          disableOnInteraction: false,
+        },
+
+        // If we need pagination
+        pagination: {
+          el: ".swiper-pagination",
+          // type: "progressbar"
+          clickable: true,
+          // dynamicBullets: true
+        },
+
+        // Navigation arrows
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        },
+
+        // And if we need scrollbar
+        // scrollbar: {
+        //   el: ".swiper-scrollbar",
+        //   draggable: true,
+        // },
+      });
+    </script>
+  </body>
+</html>
